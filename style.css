@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +7,8 @@
     font-family: "Poppins", sans-serif;
 }
 
-*::before, *::after {
+*::before,
+*::after {
     padding: 0;
     margin: 0;
 }
@@ -19,7 +21,7 @@
     --white: #fff;
     --darkwhite: #cecaca;
     --pinkshadow: #ffcbdd;
-    --lightbshadow: rgba(0,0,0,0.15);
+    --lightbshadow: rgba(0, 0, 0, 0.15);
 }
 
 body {
@@ -66,7 +68,7 @@ body {
 .top-bar span {
     font-size: 18px;
     margin-left: -3px;
-    color: var(--white);   
+    color: var(--white);
 }
 
 .img-area {
@@ -74,14 +76,14 @@ body {
     height: 256px;
     overflow: hidden;
     margin-top: 25px;
-    border-radius:  15px;
+    border-radius: 15px;
     box-shadow: 0px 6px 12px var(--lightbshadow);
 }
 
 .img-area img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    /* object-fit: cover; */
 }
 
 .song-details {
@@ -203,12 +205,12 @@ body {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    position: absolute;    
+    position: absolute;
 }
 
 .music-list {
     position: absolute;
-    background:  var(--white);
+    background: var(--white);
     width: inherit;
     left: 0;
     bottom: -55%;
@@ -217,7 +219,7 @@ body {
     z-index: 5;
     padding: 15px 30px;
     border-radius: 15px;
-    box-shadow: 0px -5px 10px rgba(0,0,0,0.1);
+    box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.1);
     transition: all 0.15s ease-out;
 }
 
@@ -231,7 +233,7 @@ body {
     display: flex;
     align-items: center;
     font-size: 19px;
-    color:  var(--lightback);
+    color: var(--lightback);
 }
 
 .header .row i {
@@ -247,13 +249,84 @@ body {
     color: var(--lightback);
 }
 
+/* volume */
+.slider_container {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modify the appearance of the slider */
+.seek_slider,
+.volume_slider {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    height: 5px;
+    background: rgb(188, 121, 121);
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+/* Modify the appearance of the slider thumb */
+.seek_slider::-webkit-slider-thumb,
+.volume_slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: white;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+/* Change the opacity when mouse is hovered */
+.seek_slider:hover,
+.volume_slider:hover {
+    opacity: 1.0;
+}
+
+.seek_slider {
+    width: 60%;
+}
+
+.volume_slider {
+    width: 30%;
+}
+
+.current-time,
+.total-duration {
+    padding: 10px;
+}
+
+i.fa-volume-down,
+i.fa-volume-up {
+    color: #ff74a4;
+    padding: 10px;
+}
+
+/* Change the mouse cursor to a pointer
+     when hovered over */
+i.fa-play-circle,
+i.fa-pause-circle,
+i.fa-step-forward,
+i.fa-step-backward {
+    cursor: pointer;
+}
+
+/* volume */
+
 .music-list ul {
     margin: 10px 0;
     max-height: 260px;
     overflow: auto;
 }
 
-.music-list ul::-webkit-scrollbar{
+.music-list ul::-webkit-scrollbar {
     width: 0px;
 }
 
@@ -287,5 +360,5 @@ ul li .audio-duration {
 ul li.playing {
     pointer-events: none;
     color: var(--violet);
-    
+
 }
