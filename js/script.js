@@ -10,7 +10,8 @@ const wrapper = document.querySelector(".wrapper"),
     progressBar = progressArea.querySelector(".progress-bar"),
     musicList = wrapper.querySelector(".music-list"),
     moreMusicBtn = wrapper.querySelector("#more-music"),
-    closemoreMusic = musicList.querySelector("#close");
+    closemoreMusic = musicList.querySelector("#close"), 
+    volume_slider = wrapper.querySelector(".volume_slider");
 
 let musicIndex = Math.floor((Math.random() * allMusic.length) + 1),
     isMusicPaused = true;
@@ -215,4 +216,8 @@ function clicked(element) {
     loadMusic(musicIndex);
     playMusic();
     playingSong();
+}
+
+function setVolume() {
+    mainAudio.volume = volume_slider.value / 100;
 }
